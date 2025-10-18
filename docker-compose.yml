@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  dual-api-crypto:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dual-api-crypto
+    ports:
+      - "8080:8080"  # Port REST API
+      - "9090:9090"  # Port gRPC API
+    environment:
+      - GIN_MODE=release
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - crypto-network
+
+networks:
+  crypto-network:
+    driver: bridge

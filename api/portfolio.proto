@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package portfolio;
+
+option go_package = "github.com/xAPT42/dual-api-crypto/api";
+
+// Service pour gérer le portefeuille crypto
+service PortfolioService {
+  // Récupère la valeur totale du portefeuille
+  rpc GetPortfolioValue(GetPortfolioValueRequest) returns (GetPortfolioValueResponse);
+}
+
+// Requête pour obtenir la valeur du portefeuille
+message GetPortfolioValueRequest {
+  // Vide pour cet exercice - on récupère toujours le même portefeuille
+}
+
+// Réponse contenant la valeur du portefeuille
+message GetPortfolioValueResponse {
+  // Valeur totale du portefeuille en EUR
+  double value = 1;
+  // Devise de la valeur (toujours EUR pour cet exercice)
+  string currency = 2;
+  // Timestamp de la dernière mise à jour des prix
+  int64 timestamp = 3;
+}
