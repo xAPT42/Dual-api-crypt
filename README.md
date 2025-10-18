@@ -1,7 +1,7 @@
 # 🚀 Dual API Crypto
 
 [![Docker Build](https://github.com/xAPT42/Dual-api-crypt/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/xAPT42/Dual-api-crypt/actions/workflows/docker-publish.yml)
-[![Docker Hub](https://img.shields.io/docker/pulls/xapt42/dual-api-crypt)](https://hub.docker.com/r/xapt42/dual-api-crypt)
+[![Docker Hub](https://img.shields.io/docker/pulls/idablaq/dual-api-crypt)](https://hub.docker.com/r/idablaq/dual-api-crypt)
 
 Un microservice Go démontrant une architecture "Dual API" avec une API REST et une API gRPC pour le suivi de portefeuille crypto en temps réel.
 
@@ -52,10 +52,10 @@ Ce projet illustre comment une seule logique métier peut servir deux types de c
 
 ```bash
 # Utiliser l'image pré-construite depuis Docker Hub
-docker pull xapt42/dual-api-crypt:latest
+docker pull idablaq/dual-api-crypt:latest
 
 # Lancer le conteneur
-docker run -d -p 8080:8080 -p 9090:9090 --name dual-api-crypt xapt42/dual-api-crypt:latest
+docker run -d -p 8080:8080 -p 9090:9090 --name dual-api-crypt idablaq/dual-api-crypt:latest
 ```
 
 ### Lancement avec Docker Compose
@@ -207,14 +207,14 @@ Pour activer le workflow, configurez les secrets suivants dans votre dépôt Git
 
 ### Images Docker Hub
 
-Les images sont disponibles sur : **[xapt42/dual-api-crypt](https://hub.docker.com/r/xapt42/dual-api-crypt)**
+Les images sont disponibles sur : **[idablaq/dual-api-crypt](https://hub.docker.com/r/idablaq/dual-api-crypt)**
 
 ```bash
 # Dernière version
-docker pull xapt42/dual-api-crypt:latest
+docker pull idablaq/dual-api-crypt:latest
 
 # Version spécifique
-docker pull xapt42/dual-api-crypt:v1.0.0
+docker pull idablaq/dual-api-crypt:v1.0.0
 ```
 
 ## 🔒 Sécurité
