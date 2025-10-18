@@ -76,7 +76,7 @@ func startGRPCServer() {
 
 	grpcServer := grpc.NewServer()
 	api.RegisterPortfolioServiceServer(grpcServer, &PortfolioServer{})
-	
+
 	// Activer la réflexion gRPC pour grpcurl
 	reflection.Register(grpcServer)
 
