@@ -1,7 +1,7 @@
 # 🚀 Dual API Crypto
 
-[![Docker Build](https://github.com/xAPT42/Dual-api-crypto/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/xAPT42/Dual-api-crypto/actions/workflows/docker-publish.yml)
-[![Docker Hub](https://img.shields.io/docker/pulls/xapt42/dual-api-crypto)](https://hub.docker.com/r/xapt42/dual-api-crypto)
+[![Docker Build](https://github.com/xAPT42/Dual-api-crypt/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/xAPT42/Dual-api-crypt/actions/workflows/docker-publish.yml)
+[![Docker Hub](https://img.shields.io/docker/pulls/xapt42/dual-api-crypt)](https://hub.docker.com/r/xapt42/dual-api-crypt)
 
 Un microservice Go démontrant une architecture "Dual API" avec une API REST et une API gRPC pour le suivi de portefeuille crypto en temps réel.
 
@@ -52,18 +52,18 @@ Ce projet illustre comment une seule logique métier peut servir deux types de c
 
 ```bash
 # Utiliser l'image pré-construite depuis Docker Hub
-docker pull xapt42/dual-api-crypto:latest
+docker pull xapt42/dual-api-crypt:latest
 
 # Lancer le conteneur
-docker run -d -p 8080:8080 -p 9090:9090 --name dual-api-crypto xapt42/dual-api-crypto:latest
+docker run -d -p 8080:8080 -p 9090:9090 --name dual-api-crypt xapt42/dual-api-crypt:latest
 ```
 
 ### Lancement avec Docker Compose
 
 ```bash
 # Cloner le projet
-git clone https://github.com/xAPT42/dual-api-crypto.git
-cd dual-api-crypto
+git clone https://github.com/xAPT42/Dual-api-crypt.git
+cd Dual-api-crypt
 
 # Construire et lancer
 docker-compose up --build
@@ -207,14 +207,14 @@ Pour activer le workflow, configurez les secrets suivants dans votre dépôt Git
 
 ### Images Docker Hub
 
-Les images sont disponibles sur : **[xapt42/dual-api-crypto](https://hub.docker.com/r/xapt42/dual-api-crypto)**
+Les images sont disponibles sur : **[xapt42/dual-api-crypt](https://hub.docker.com/r/xapt42/dual-api-crypt)**
 
 ```bash
 # Dernière version
-docker pull xapt42/dual-api-crypto:latest
+docker pull xapt42/dual-api-crypt:latest
 
 # Version spécifique
-docker pull xapt42/dual-api-crypto:v1.0.0
+docker pull xapt42/dual-api-crypt:v1.0.0
 ```
 
 ## 🔒 Sécurité
