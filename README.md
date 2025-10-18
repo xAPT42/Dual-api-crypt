@@ -1,5 +1,8 @@
 # 🚀 Dual API Crypto
 
+[![Docker Build](https://github.com/xAPT42/Dual-api-crypto/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/xAPT42/Dual-api-crypto/actions/workflows/docker-publish.yml)
+[![Docker Hub](https://img.shields.io/docker/pulls/xapt42/dual-api-crypto)](https://hub.docker.com/r/xapt42/dual-api-crypto)
+
 Un microservice Go démontrant une architecture "Dual API" avec une API REST et une API gRPC pour le suivi de portefeuille crypto en temps réel.
 
 ## 🎯 Objectif
@@ -45,7 +48,17 @@ Ce projet illustre comment une seule logique métier peut servir deux types de c
 - Docker et Docker Compose
 - Go 1.24+ (pour le développement local)
 
-### Lancement avec Docker
+### Lancement avec Docker Hub
+
+```bash
+# Utiliser l'image pré-construite depuis Docker Hub
+docker pull xapt42/dual-api-crypto:latest
+
+# Lancer le conteneur
+docker run -d -p 8080:8080 -p 9090:9090 --name dual-api-crypto xapt42/dual-api-crypto:latest
+```
+
+### Lancement avec Docker Compose
 
 ```bash
 # Cloner le projet
@@ -167,6 +180,42 @@ grpcurl -plaintext localhost:9090 portfolio.PortfolioService/GetPortfolioValue
 ## 📊 Monitoring
 
 Le service expose un endpoint de santé sur `/health` pour le monitoring.
+
+## 🔄 CI/CD et Docker Hub
+
+### Workflow GitHub Actions
+
+Le projet utilise GitHub Actions pour automatiser le build et le push des images Docker vers Docker Hub :
+
+- **Déclenchement** :
+  - Push sur la branche `main` → tag `latest`
+  - Tags Git (ex: `v1.0.0`) → tags versionnés
+  - Pull Requests → build de test uniquement
+
+- **Multi-architecture** : Les images sont buildées pour `linux/amd64` et `linux/arm64`
+
+- **Cache** : Utilise GitHub Actions cache pour accélérer les builds
+
+### Configuration des Secrets GitHub
+
+Pour activer le workflow, configurez les secrets suivants dans votre dépôt GitHub :
+
+1. Allez dans `Settings` → `Secrets and variables` → `Actions`
+2. Ajoutez les secrets suivants :
+   - `DOCKERHUB_USERNAME` : Votre nom d'utilisateur Docker Hub
+   - `DOCKERHUB_TOKEN` : Votre token d'accès Docker Hub (créer un token sur hub.docker.com)
+
+### Images Docker Hub
+
+Les images sont disponibles sur : **[xapt42/dual-api-crypto](https://hub.docker.com/r/xapt42/dual-api-crypto)**
+
+```bash
+# Dernière version
+docker pull xapt42/dual-api-crypto:latest
+
+# Version spécifique
+docker pull xapt42/dual-api-crypto:v1.0.0
+```
 
 ## 🔒 Sécurité
 
